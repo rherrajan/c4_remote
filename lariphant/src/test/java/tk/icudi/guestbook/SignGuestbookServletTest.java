@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tk.icudi;
+package tk.icudi.guestbook;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -32,6 +32,9 @@ import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestC
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 
 import com.googlecode.objectify.ObjectifyService;
+
+import tk.icudi.guestbook.OfyHelper;
+import tk.icudi.guestbook.SignGuestbookServlet;
 
 import org.junit.After;
 import org.junit.Before;

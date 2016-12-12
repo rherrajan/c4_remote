@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tk.icudi;
+package tk.icudi.guestbook;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;

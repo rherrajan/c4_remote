@@ -6,11 +6,11 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <servlet>
         <servlet-name>sign</servlet-name>
-        <servlet-class>tk.icudi.SignGuestbookServlet</servlet-class>
+        <servlet-class>tk.icudi.guestbook.SignGuestbookServlet</servlet-class>
     </servlet>
     <servlet>
        <servlet-name>guestbook</servlet-name>
-      <servlet-class>tk.icudi.GuestbookServlet</servlet-class>
+      <servlet-class>tk.icudi.guestbook.GuestbookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>sign</servlet-name>
@@ -33,7 +33,7 @@
       <url-pattern>/*</url-pattern>
     </filter-mapping>
     <listener>
-      <listener-class>tk.icudi.OfyHelper</listener-class>
+      <listener-class>tk.icudi.guestbook.OfyHelper</listener-class>
     </listener>
 <!-- [END Objectify] -->
 </web-app>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 //[START all]
-package tk.icudi;
+package tk.icudi.guestbook;
 
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;

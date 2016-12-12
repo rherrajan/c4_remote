@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tk.icudi;
+package tk.icudi.guestbook;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -24,6 +24,8 @@ import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import com.google.appengine.tools.development.testing.LocalUserServiceTestConfig;
+
+import tk.icudi.guestbook.GuestbookServlet;
 
 import org.junit.After;
 import org.junit.Before;
