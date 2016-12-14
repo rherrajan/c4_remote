@@ -20,7 +20,7 @@ function Sprite (options) {
 
     that.render = function () {
 
-        console.log("frameIndex: ", frameIndex);
+        // console.log("frameIndex: ", frameIndex);
 
         // Draw the animation
         that.context.drawImage(
@@ -104,6 +104,33 @@ function Game() {
             loop: true
         });
 
+        that.gilian.x=100;
+        that.gilian.y=100;
+
+
+        console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
+
+        that.joystick    = new VirtualJoystick({
+            mouseSupport: true,
+            stationaryBase: true,
+            baseX: 510,
+            baseY: 500,
+        });
+
+
+/*
+            setInterval(function(){
+                var outputEl    = document.getElementById('result');
+                outputEl.innerHTML  = '<b>Result:</b> '
+                    + ' dx:'+joystick.deltaX()
+                    + ' dy:'+joystick.deltaY()
+                    + (joystick.right() ? ' right'  : '')
+                    + (joystick.up()    ? ' up'     : '')
+                    + (joystick.left()  ? ' left'   : '')
+                    + (joystick.down()  ? ' down'   : '')   
+            }, 1/30 * 1000);
+*/
+
         setInterval(this.loop, 1000);
 
     };
@@ -126,8 +153,18 @@ function Game() {
 
     this.gameloop = function () {
 
-        that.gilian.x=100;
-        that.gilian.y=100;
+        if(that.joystick.right()){
+            that.gilian.x += 10;
+        }
+        if(that.joystick.left()){
+            that.gilian.x -= 10;
+        }
+        if(that.joystick.up()){
+            that.gilian.y -= 10;
+        }
+        if(that.joystick.down()){
+            that.gilian.y += 10;
+        }
     }
 
     this.paint = function () {
