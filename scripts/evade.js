@@ -73,9 +73,6 @@ function Game() {
         }
 
         this.canvas = document.getElementsByTagName("canvas")[0];
-        this.canvas.addEventListener('click', function (e) {
-            that.onclick(that.canvas, e);
-        });
         this.context = this.canvas.getContext('2d');
 
         console.log("size: ", this.canvas.width, this.canvas.height);
@@ -87,13 +84,13 @@ function Game() {
         this.clear();
 
         this.imgBackground = new Image();
-        this.imgBackground.src = 'img/background.png';
+        this.imgBackground.src = 'images/background.png';
 
         this.imgForeground = new Image();
-        this.imgForeground.src = 'img/foreground.png';
+        this.imgForeground.src = 'images/foreground.png';
 
         var imgGilian = new Image()
-        imgGilian.src = 'img/Gilian.png';
+        imgGilian.src = 'images/Gilian.png';
 
         this.gilian = Sprite({
             context: this.context,
@@ -111,13 +108,14 @@ function Game() {
         console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
 
         that.joystick    = new VirtualJoystick({
+            container   : document.getElementById('evadeCanvas'),
             mouseSupport: true,
             stationaryBase: true,
-            baseX: 510,
-            baseY: 500,
+            baseX: 135,
+            baseY: 465,
         });
-
-
+        
+        
 /*
             setInterval(function(){
                 var outputEl    = document.getElementById('result');
@@ -171,41 +169,19 @@ function Game() {
         that.context.drawImage(that.imgBackground, 45, 0);
         that.context.drawImage(that.imgForeground, 0, 0);
 
+        //this.context.fillRect(150,500,10,10,"#fff"); // fill in the pixel at (10,10)
+        this.drawCircle(140, 400, 50, "green", "white");
+
         that.gilian.update();
         that.gilian.render();
 
-     /*     
-             var width = 32,
-            height = 48,
-            frames = 4,
-  
-        currentFrame = 0,
-        
-        image = new Image()
-        image.src = 'img/Gilian.png';
-    
-        that.context.drawImage(image, width * currentFrame, 0, width, height, 0, 0, width, height);
-        
-        if (currentFrame == frames) {
-          currentFrame = 0;
-        } else {
-          currentFrame++;
-        }
-        
-
-
-        var x=1;
-        var y=1;
-        that.drawCircle(75 * x + 100, 75 * y + 50, 25, "#ff9911", "black");
-        console.log("draw: ", x, y);
-        */
     };
 
     this.clear = function () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     };
 
-/*
+
     this.drawCircle = function (x, y, r, fill, stroke) {
         this.context.fillStyle = fill;
         this.context.strokeStyle = stroke;
@@ -214,15 +190,11 @@ function Game() {
         this.context.stroke();
         this.context.fill();
     };
-*/
-    this.onclick = function (canvas, e) {
-        alert(" --- hi --- ");
-    }
 
 
     this.init();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    this.game = new Game();
-});
+console.log("hi ho");
+this.game = new Game();
+
