@@ -84,13 +84,13 @@ function Game() {
         this.clear();
 
         this.imgBackground = new Image();
-        this.imgBackground.src = 'lariphantevade/images/background.png';
+        this.imgBackground.src = 'images/background.png';
 
         this.imgForeground = new Image();
-        this.imgForeground.src = 'lariphantevade/images/foreground.png';
+        this.imgForeground.src = 'images/foreground.png';
 
         var imgGilian = new Image()
-        imgGilian.src = 'lariphantevade/images/Gilian.png';
+        imgGilian.src = 'images/Gilian.png';
 
         this.gilian = Sprite({
             context: this.context,
